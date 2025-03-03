@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	
+	</head>
+	<body>
+		<form action="/tenant/edit">
+					<label for="id">ID</label>
+					<input type="text" placeholder="Enter id" name="id" th:value="${items.id}">
+					<label for="id">Tenant Name</label>
+					<input type="text" placeholder="Enter Tenant Name" name="name" th:value="${items.name}">
+					<label for="id">Tenant Contact</label>
+					<input type="text" placeholder="Enter Tenant Contact" name="contact" th:value="${items.contact}">
+					<label for="id">Property Name</label>
+					<input type="text" placeholder="Enter Property Name" name="propertyname" th:value="${items.propertyname}">
+					<label for="id">Property Rent</label>
+					<input type="text" placeholder="Enter Property Rent" name="rent" th:value="${items.rent}">
+					
+					<input type="submit" name="submit">
+							  
+				</form>
+			
+				<div class="button-container">
+					<a href="/tenant/Tenantdata_view">Show Data</a>
+		            <a href="/tenant/Findall_data">Find All Data</a>
+				</div>
+	</body>
+	</html>

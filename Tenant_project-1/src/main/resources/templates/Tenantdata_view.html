@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Dataview</title>
+	<style>
+			body {
+				background: skyblue;
+				font-family: Arial, sans-serif;
+				margin: 0;
+				display: flex;
+				flex-direction: column;
+				padding: 20px;
+				justify-content: flex-start;
+				align-items: center;
+			}
+			table {
+					            width: 80%;
+					            border-collapse: collapse;
+					            margin-bottom: 20px 0;
+					        }
+					        table th, table td {
+					            border: 1px solid #ddd;
+					            padding: 10px;
+					            text-align: center;
+					        }
+					        table th {
+					            background-color: #007bff;
+					            color: white;
+					        }
+					        table tr:nth-child(even) {
+					            background-color: #f9f9f9;
+					        }
+					        .button-container {
+					            text-align: center;
+								margin-top: 20px;
+					        }
+					        .button-container a {
+					            display: inline-block;
+					            margin: 5px;
+					            padding: 10px 15px;
+					            background-color: #007bff;
+					            color: white;
+					            text-decoration: none;
+					            border-radius: 5px;
+					            font-size: 14px;
+					        }
+					        .button-container a:hover {
+					            background-color: #0056b3;
+					        }
+		</style>
+	</head>
+			<body>
+				<table th:if="${items}">
+					<tr>
+						<th>Id</th>
+						<th>Tenant Name</th>
+						<th>Tenant Contact</th>
+						<th>Property Name</th>
+						<th>Property Rent</th>
+						<th>Editor</th>
+					</tr>
+					
+					<tr th:each="item :${items}">
+						<td th:text="${item.id}"></td>
+						<td th:text="${item.name}"></td>
+						<td th:text="${item.contact}"></td>
+						<td th:text="${item.propertyname}"></td>
+						<td th:text="${item.rent}"></td>
+						<td><a th:href="@{/tenant/edit_tenant/{id}(id=${item.id})}">Edit</a></td>
+						
+					</tr>
+				</table>
+				<table th:if="${item}">
+		 				<tr>
+		 					<th>Id</th>
+							<th>Tenant Name</th>
+							<th>Tenant Contact</th>
+							<th>Property Name</th>
+							<th>Property Rent</th>
+							<th>Editor</th>
+		 				</tr>
+		 				
+		 				<tr>
+							<td th:text="${item.id}"></td>
+							<td th:text="${item.name}"></td>
+							<td th:text="${item.contact}"></td>
+							<td th:text="${item.propertyname}"></td>
+							<td th:text="${item.rent}"></td>
+							<td><a th:href="@{/tenant/edit_tenant/{id}(id=${item.id})}">Edit</a></td>
+		 					
+		 				</tr>
+		 			</table>
+				
+				<div class="button-container">
+ 	            <a href="/tenant/Tenant_entry">Go to Tenant Data Entry</a>
+	            <a href="/tenant/Findall_data">Find All Tenant Data</a>
+		          </div>
+			</body>
+     </html>

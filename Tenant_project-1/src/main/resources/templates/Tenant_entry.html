@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <title>Tenant Entry</title>
+	</head>
+	<style>
+				body {
+					background: skyblue;
+					font-family: Arial, sans-serif;
+					margin: 0;
+					display: flex;
+					padding: 30px;
+					justify-content: center;
+					align-items: center;
+				}
+				form {
+					background: white;
+					justify-content: center;
+					align-items: center;
+					padding: 50px;
+					width: 360px;
+					box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+					border-radius: 8%;
+				}
+				
+				form input[type="text"],
+					 form input[type="submit"]{
+						display: block;
+						width: 100%;
+						margin-bottom: 20px;
+						padding: 10px;
+						font-size: 16px;
+						border: 1px solid #ccc;
+						border-radius: 5px;
+						transition: all 0.3s ease-in-out;
+					}
+					form input[type="text"]:focus {
+						 border-color: #007bff;
+						 box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+						 outline: none;
+						 }
+						 form input[type="submit"] {
+						    background: #007bff;
+						 	color: #fff;
+						 	border: none;
+						 	cursor: pointer;
+						 	}
+							.button-container {
+							            margin-top: 20px;
+							            text-align: center;	
+							        }
+							        .button-container a {
+							            display: inline-block;
+							            background: #007bff;
+							            color: #fff;
+							            text-decoration: none;
+							            padding: 10px 15px;
+							            border-radius: 5px;
+							            margin: 0 5px;
+							            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+							            font-size: 14px;
+							        }
+			</style>
+	<body>
+		<form action="/tenant/adddata">
+						
+						<label for="id">Tenant Name</label>
+						<input type="text" placeholder="Enter the Tenant Name" name="name">
+						<label for="id">Tenant Contact</label>
+						<input type="text" placeholder="Enter the Tenant Contact" name="contact">
+						<label for="id">Property Name</label>
+						<input type="text" placeholder="Enter the Property Name" name="propertyname">
+						<label for="id">Property Rent</label>
+						<input type="text" placeholder="Enter the Property Rent" name="rent">
+						
+						<input type="submit" name="Save Data's">
+		</form>
+		<div class="button-container">
+		<a href="/tenant/Tenantdata_view">Show Tenant Data</a>
+        <a href="/tenant/find_all">Find All Data</a>
+					</div>
+	</body>
+</html>
